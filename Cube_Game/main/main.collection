@@ -1,0 +1,42 @@
+name: "main"
+instances {
+  id: "Player_cube"
+  prototype: "/gfx/Player_cube.go"
+  position {
+    x: 25.0
+    y: 25.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "Not_player_cube"
+  prototype: "/gfx/Not_player_cube.go"
+  position {
+    x: 475.0
+    y: 385.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0

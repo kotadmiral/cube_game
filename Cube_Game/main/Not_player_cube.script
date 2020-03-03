@@ -1,0 +1,24 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.vel = vmath.vector3()
+	self.hp = 100
+	label.set_text("#hp", tostring(self.hp))	
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("attack") and action.pressed then
+		player_position = go.get_world_position("Player_cube")
+		not_player_position = go.get_world_position("Not_player_cube")
+		dx = player_position.x - not_player_position.x
+		dy = player_position.y - not_player_position.y
+		range = math.sqrt((dx*dx)+(dy*dy))
+		if range <= 100 then
+			self.hp = self.hp - 10
+			if self.hp <= 0 then
+				go.delete("Not_player_cube")
+			else
+				label.set_text("#hp", tostring(self.hp))
+			end
+		end
+	end
+end
